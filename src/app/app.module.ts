@@ -20,7 +20,7 @@ import { GLOBAL_RX_STATE, GlobalState } from './state/state';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    LetModule
+    LetModule,
   ],
   providers: [
     {

@@ -2,9 +2,8 @@ import { InjectionToken } from '@angular/core';
 import { RxState } from '@rx-angular/state';
 import { Cell, COLOR, Game, GAME_SIZE } from '../models/game';
 
-export interface GlobalState {
+export interface GlobalState extends Game{
   currentTurn: COLOR,
-  game: Game
 }
 
 const emptyField = (): Cell[][] => {
@@ -13,8 +12,7 @@ const emptyField = (): Cell[][] => {
 
 export const initialState: GlobalState = {
   currentTurn: COLOR.WHITE,
-  game: {
-    topLeftField: {
+  topLeftField: {
       cells: emptyField()
     },
     topRightField: {
@@ -26,7 +24,6 @@ export const initialState: GlobalState = {
     bottomRightField: {
       cells: emptyField()
     }
-  }
 };
 
 export const GLOBAL_RX_STATE = new InjectionToken<RxState<GlobalState>>('GLOBAL_RX_STATE');

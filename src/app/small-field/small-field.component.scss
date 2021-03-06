@@ -21,6 +21,9 @@ $size: 70px;
   border: 1px solid black;
   position: relative;
   background: lightgoldenrodyellow;
+  &.available {
+    cursor: pointer;
+  }
 }
 
 .item {

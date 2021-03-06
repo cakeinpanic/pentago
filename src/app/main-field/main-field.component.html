@@ -1,10 +1,15 @@
-<ng-container *rxLet="game$; let game">
+<ng-container *rxLet="game$; let game; rxSuspense: suspenseTemplate">
+  {{game}}
   <div>
-    <app-small-field [field]="game.topLeftField" class="field"></app-small-field>
-    <app-small-field [field]="game.topRightField" class="field"></app-small-field>
+    <app-small-field [field]="game.topLeftField" (onItemAdd)="onItemAdd('topLeftField', $event)" class="field"></app-small-field>
+    <app-small-field [field]="game.topRightField" (onItemAdd)="onItemAdd('topRightField',$event)" class="field"></app-small-field>
   </div>
   <div>
-    <app-small-field [field]="game.bottomLeftField" class="field"></app-small-field>
-    <app-small-field [field]="game.bottomRightField" class="field"></app-small-field>
+    <app-small-field [field]="game.bottomLeftField" (onItemAdd)="onItemAdd('bottomLeftField', $event)" class="field"></app-small-field>
+    <app-small-field [field]="game.bottomRightField" (onItemAdd)="onItemAdd('bottomRightField', $event)" class="field"></app-small-field>
   </div>
 </ng-container>
+
+<ng-template #suspenseTemplate>
+  suspense!
+</ng-template>

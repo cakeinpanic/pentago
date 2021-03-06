@@ -1,12 +1,15 @@
 <div class="field">
   <ng-container *rxLet="cells$ as table">
-  <div *ngFor="let row of table" class="row">
-    <div *ngFor="let cell of row" class="cell">
-      <div *ngIf="!!cell.color" class="item"
-           [class.black]="isBlack(cell)"
-           [class.white]="isWhite(cell)"></div>
+    <div *ngFor="let row of table; let i=index" class="row">
+      <div *ngFor="let cell of row; let j=index"
+           class="cell"
+           (click)="addItem(cell, i,j)"
+           [class.available]="!cell.color">
+        <div *ngIf="!!cell.color" class="item"
+             [class.black]="isBlack(cell)"
+             [class.white]="isWhite(cell)"></div>
+      </div>
     </div>
-  </div>
   </ng-container>
 </div>
 

@@ -1,0 +1,36 @@
+$size: 70px;
+.row {
+  display: flex;
+  flex-direction: row;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.cell {
+  display: flex;
+  width: $size;
+  height: $size;
+  border: 1px solid black;
+  position: relative;
+  background: lightgoldenrodyellow;
+}
+
+.item {
+  width: $size*.7;
+  height: $size*.7;
+  border-radius: $size;
+  position: relative;
+  top: $size*.15;
+  left: $size*.15;
+  box-shadow: 1px 1px 16px -4px rgb(0 0 0 / 40%);
+  &.black {
+    background: black;
+  }
+
+  &.white {
+    background: white;
+  }
+}

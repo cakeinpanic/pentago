@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { RxState } from '@rx-angular/state';
-import { COLOR, Field } from '../models/game';
+import { Observable } from 'rxjs';
+import { Game } from '../models/game';
+import { GLOBAL_RX_STATE, GlobalState } from '../state/state';
 
 @Component({
   selector: 'app-main-field',
@@ -9,15 +11,9 @@ import { COLOR, Field } from '../models/game';
   providers: [RxState],
 })
 export class MainFieldComponent implements OnInit {
-  field: Field = {
-    cells: [
-      [{ color: COLOR.WHITE }, { color: null }, { color: COLOR.BLACK }],
-      [{ color: COLOR.BLACK }, { color: null }, { color: COLOR.WHITE }],
-      [{ color: null }, { color: null }, { color: COLOR.BLACK }],
-    ]
-  };
+  readonly game$: Observable<Game> = this.state.select('game');
 
-  constructor() { }
+  constructor(@Inject(GLOBAL_RX_STATE) private state: RxState<GlobalState>) { }
 
   ngOnInit(): void {
   }

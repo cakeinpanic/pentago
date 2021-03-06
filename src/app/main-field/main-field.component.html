@@ -1,2 +1,10 @@
-<app-small-field [field]="field" class="field"></app-small-field>
-
+<ng-container *rxLet="game$; let game">
+  <div>
+    <app-small-field [field]="game.topLeftField" class="field"></app-small-field>
+    <app-small-field [field]="game.topRightField" class="field"></app-small-field>
+  </div>
+  <div>
+    <app-small-field [field]="game.bottomLeftField" class="field"></app-small-field>
+    <app-small-field [field]="game.bottomRightField" class="field"></app-small-field>
+  </div>
+</ng-container>

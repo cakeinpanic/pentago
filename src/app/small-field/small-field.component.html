@@ -1,9 +1,12 @@
 <div class="field">
-  <div *ngFor="let row of (cells$|async)" class="row">
+  <ng-container *rxLet="cells$ as table">
+  <div *ngFor="let row of table" class="row">
     <div *ngFor="let cell of row" class="cell">
       <div *ngIf="!!cell.color" class="item"
            [class.black]="isBlack(cell)"
            [class.white]="isWhite(cell)"></div>
     </div>
   </div>
+  </ng-container>
 </div>
+

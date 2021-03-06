@@ -21,6 +21,7 @@
     "@angular/router": "~11.1.0",
     "@rx-angular/cdk": ">=1.0.0-alpha.2",
     "@rx-angular/state": "^1.4.3",
+    "@rx-angular/template": "^1.0.0-beta.24",
     "rxjs": "~6.6.0",
     "scheduler": "^0.20.1",
     "tslib": "^2.0.0",

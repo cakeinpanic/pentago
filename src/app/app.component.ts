@@ -10,7 +10,8 @@ import { GLOBAL_RX_STATE, GlobalState, initialState } from './state/state';
 export class AppComponent {
   title = 'pentago';
 
-  constructor(@Inject(GLOBAL_RX_STATE) private state: RxState<GlobalState>) {
+  constructor(
+    @Inject(GLOBAL_RX_STATE) private state: RxState<GlobalState>) {
     this.state.set(initialState);
   }
 

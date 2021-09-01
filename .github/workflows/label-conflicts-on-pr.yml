@@ -2,10 +2,18 @@ name: Conflict labeller
 on:
   pull_request_target:
     types: [opened, synchronize]
+  push:
+    branches:
+      - master
 
 jobs:
   add-label:
     name: Add label
     runs-on: ubuntu-latest
     steps:
-      - run: echo {{$GITHUB_HEAD_REF}}
+      - uses: cakeinpanic/actions-label-merge-conflict@main
+        with:
+          dirtyLabel: 'has conflicts'
+          repoToken: ${{ secrets.GITHUB_TOKEN }}
+          retryAfter: 25
+          retryMax: 5

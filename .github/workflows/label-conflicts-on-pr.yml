@@ -11,7 +11,7 @@ jobs:
     name: Add label
     runs-on: ubuntu-latest
     steps:
-      - uses: cakeinpanic/actions-label-merge-conflict@main
+      - uses: cakeinpanic/actions-label-merge-conflict@main2
         with:
           dirtyLabel: 'has conflicts'
           repoToken: ${{ secrets.GITHUB_TOKEN }}

@@ -3,9 +3,3 @@ on:
   pull_request_target:
     types: [opened, synchronize]
 
-jobs:
-  add-label:
-    name: Add label
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo ${{GITHUB_HEAD_REF}}

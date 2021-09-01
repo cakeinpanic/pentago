@@ -1,7 +1,8 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
-import { RxState } from '@rx-angular/state';
 import { LetModule } from '@rx-angular/template';
+
+import { RxState } from '@rx-angular/state';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
